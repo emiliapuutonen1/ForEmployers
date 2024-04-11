@@ -41,4 +41,4 @@ Contributions to the Portfolio Website project are welcome! Whether it's bug fix
 For any inquiries or assistance related to the Portfolio Website project, feel free to contact the project maintainer.
 
 
-# Thank you for your interest in the Portfolio Website! We hope you find it informative and inspiring.
+# Thank you for your interest in the Portfolio Website! I hope you find it informative and inspiring.
