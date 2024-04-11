@@ -4,11 +4,11 @@ This repository contains the source code for a portfolio website created by me. 
 
 # Features:
 
-# Navigation Controls: Users can navigate through different sections of the website using the navigation controls located at the bottom of the page.
+Navigation Controls: Users can navigate through different sections of the website using the navigation controls located at the bottom of the page.
 
-# Dynamic Content: The website includes dynamic content such as project listings, work experience timelines, and contact information.
+Dynamic Content: The website includes dynamic content such as project listings, work experience timelines, and contact information.
 
-# Integration: The website integrates with external platforms such as GitHub and Instagram, allowing visitors to access my profiles directly from the website.
+Integration: The website integrates with external platforms such as GitHub and Instagram, allowing visitors to access my profiles directly from the website.
 
 
 # Technologies Used:
