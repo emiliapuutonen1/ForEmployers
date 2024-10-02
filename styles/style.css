@@ -769,7 +769,7 @@ section {
   }
   
   .controls {
-    top: auto;
+    top: 57%;
     bottom: 0;
     flex-direction: row;
     justify-content: center;
