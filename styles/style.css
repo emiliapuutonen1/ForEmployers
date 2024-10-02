@@ -181,6 +181,7 @@ section {
   display: flex;
   align-items: center;
   position: relative;
+  margin: 20px;
 }
 .header-content .left-header .image {
   border-radius: var(--br-sm-2);
