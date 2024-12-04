@@ -70,45 +70,7 @@ class ThemeSwitcher {
   const themeButton = document.querySelector('.theme-btn');
   const themeSwitcher = new ThemeSwitcher(themeButton);
 
-class LanguageSwitcher {
-    constructor() {
-        this.language = localStorage.getItem('language') || 'en'; // Default to English
-        this.init();
-    }
 
-    init() {
-        this.applyLanguage(this.language); // Apply the saved or default language on page load
-        this.setupEventListeners();       // Add event listeners for language buttons
-    }
-
-    applyLanguage(language) {
-        this.language = language;
-
-        // Update content dynamically based on the selected language
-        document.querySelectorAll('[data-lang-en], [data-lang-fi]').forEach((element) => {
-            const text = language === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-fi');
-            if (text) {
-                element.textContent = text; // Replace the text content with the selected language
-            }
-        });
-
-        // Save the selected language to localStorage
-        localStorage.setItem('language', language);
-    }
-
-    setupEventListeners() {
-        document.getElementById('english-btn').addEventListener('click', () => {
-            this.applyLanguage('en');
-        });
-
-        document.getElementById('finnish-btn').addEventListener('click', () => {
-            this.applyLanguage('fi');
-        });
-    }
-}
-
-// Initialize the language switcher
-const languageSwitcher = new LanguageSwitcher();
 
 
   function fetchWeatherData() {
