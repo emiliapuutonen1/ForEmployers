@@ -70,6 +70,51 @@ class ThemeSwitcher {
   const themeButton = document.querySelector('.theme-btn');
   const themeSwitcher = new ThemeSwitcher(themeButton);
 
+class LanguageSwitcher {
+    constructor() {
+        this.language = localStorage.getItem('language') || 'en'; // Default to English
+        this.init();
+    }
+
+    init() {
+        this.loadLanguage();
+        this.setupEventListeners();
+    }
+
+    loadLanguage() {
+        const language = localStorage.getItem('language') || 'en';
+        this.applyLanguage(language);
+    }
+
+    applyLanguage(language) {
+        this.language = language;
+
+        // Update content based on the language
+        if (language === 'en') {
+            document.body.querySelectorAll('[data-lang-en]').forEach((el) => {
+                el.textContent = el.dataset.langEn;
+            });
+        } else if (language === 'fi') {
+            document.body.querySelectorAll('[data-lang-fi]').forEach((el) => {
+                el.textContent = el.dataset.langFi;
+            });
+        }
+
+        // Save the selected language
+        localStorage.setItem('language', language);
+    }
+
+    setupEventListeners() {
+        document.getElementById('english-btn').addEventListener('click', () => {
+            this.applyLanguage('en');
+        });
+        document.getElementById('finnish-btn').addEventListener('click', () => {
+            this.applyLanguage('fi');
+        });
+    }
+}
+
+const languageSwitcher = new LanguageSwitcher();
 
   function fetchWeatherData() {
     const weatherInfo = document.getElementById('weather-info');
@@ -128,6 +173,7 @@ const downloadCvButton = document.querySelector('.main-btn');
 downloadCvButton.addEventListener('click', () => {
   alert('CV download will start shortly.'); 
 });
+
 
 
 
