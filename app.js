@@ -77,30 +77,22 @@ class LanguageSwitcher {
     }
 
     init() {
-        this.loadLanguage();
-        this.setupEventListeners();
-    }
-
-    loadLanguage() {
-        const language = localStorage.getItem('language') || 'en';
-        this.applyLanguage(language);
+        this.applyLanguage(this.language); // Apply the saved or default language on page load
+        this.setupEventListeners();       // Add event listeners for language buttons
     }
 
     applyLanguage(language) {
         this.language = language;
 
-        // Update content based on the language
-        if (language === 'en') {
-            document.body.querySelectorAll('[data-lang-en]').forEach((el) => {
-                el.textContent = el.dataset.langEn;
-            });
-        } else if (language === 'fi') {
-            document.body.querySelectorAll('[data-lang-fi]').forEach((el) => {
-                el.textContent = el.dataset.langFi;
-            });
-        }
+        // Update content dynamically based on the selected language
+        document.querySelectorAll('[data-lang-en], [data-lang-fi]').forEach((element) => {
+            const text = language === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-fi');
+            if (text) {
+                element.textContent = text; // Replace the text content with the selected language
+            }
+        });
 
-        // Save the selected language
+        // Save the selected language to localStorage
         localStorage.setItem('language', language);
     }
 
@@ -108,13 +100,16 @@ class LanguageSwitcher {
         document.getElementById('english-btn').addEventListener('click', () => {
             this.applyLanguage('en');
         });
+
         document.getElementById('finnish-btn').addEventListener('click', () => {
             this.applyLanguage('fi');
         });
     }
 }
 
+// Initialize the language switcher
 const languageSwitcher = new LanguageSwitcher();
+
 
   function fetchWeatherData() {
     const weatherInfo = document.getElementById('weather-info');
